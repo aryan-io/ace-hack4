@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0ff;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.hero-parallax {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.hero-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: center;
+    will-change: transform;
+}
+
+.hero-layer-1 {
+    background-image: url('https://images.unsplash.com/photo-1515630278258-407f66498911?auto=format&fit=crop&w=1920&q=80');
+    transform: translateZ(-0.2px) scale(2);
+}
+
+.hero-layer-2 {
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+    transform: translateZ(-0.5px) scale(1.5);
+}
+
+.hero-layer-3 {
+    background-image: url('image/layout.avif');
+    transform: translateZ(0) scale(1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.hero-logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px #17d4d4) drop-shadow(0 0 10px #17d4d4) drop-shadow(0 0 15px #17d4d4);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.event-date {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+.timer {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #ff00ff;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+    z-index: -1;
+    filter: blur(5px);
+    background-size: 400%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover::before {
+    opacity: 1;
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.btn-primary {
+    background-color: #0ff;
+    color: #000;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0ff;
+    border: 2px solid #0ff;
+}
+
+.about {
+    padding: 100px 0;
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.prize-pool {
+    padding: 100px 0;
+    background-color: rgba(255, 0, 255, 0.05);
+}
+
+.prize-pool h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.prize-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.prize-card {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 2px solid #0ff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.prize-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.prize-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.prize-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff00ff;
+}
+
+.prize-card .amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0ff;
+    margin-bottom: 15px;
+}
+
+.prize-card .description {
+    font-size: 1rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 200px;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .timer {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .prize-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prize-card {
+        width: 80%;
+        max-width: 300px;
+    }
+}
